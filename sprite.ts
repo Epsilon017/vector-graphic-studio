@@ -1,5 +1,6 @@
 import { Component } from "./component.js";
 import { Entity } from "./entity.js";
+import { SceneManager } from "./scene-manager.js";
 import { C_Transform } from "./transform.js";
 
 export class C_Sprite extends Component {
@@ -33,7 +34,7 @@ export class C_Sprite extends Component {
         };
 
         let position = this.owner.getComponent(C_Transform).getPosition();
-        //// draw with canvas context
+        SceneManager.getInstance().getCanvasContext().drawImage(this.image, position.x, position.y);
         
     };
 
