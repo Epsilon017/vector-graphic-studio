@@ -1,5 +1,5 @@
-import { Component } from "./component.js";
-import { Vector2 } from "./vector2.js";
+import { Component } from "../scene system/component.js";
+import { Vector2 } from "../vector2.js";
 
 export class C_Transform extends Component {
 

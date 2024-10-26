@@ -1,5 +1,5 @@
-import { EntityCollection } from "./entity-collection.js";
-import { SceneManager } from "./scene-manager.js";
+import { EntityCollection } from "./scene system/entity-collection.js"
+import { SceneManager } from "./scene system/scene-manager.js";
 
 // setup main display canvas that covers the whole body
 const canvas = document.getElementById('onscreenCanvas') as HTMLCanvasElement;

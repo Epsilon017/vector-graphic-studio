@@ -1,6 +1,6 @@
-import { Component } from "./component.js";
-import { Entity } from "./entity.js";
-import { SceneManager } from "./scene-manager.js";
+import { Component } from "../scene system/component.js";
+import { Entity } from "../scene system/entity.js";
+import { SceneManager } from "../scene system/scene-manager.js";
 import { C_Transform } from "./transform.js";
 
 export class C_Sprite extends Component {
