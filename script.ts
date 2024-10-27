@@ -1,4 +1,5 @@
 import { EntityCollection } from "./scene system/entity-collection.js"
+import { ImageCollection } from "./scene system/image-collection.js";
 import { SceneManager } from "./scene system/scene-manager.js";
 
 // setup main display canvas that covers the whole body
@@ -12,6 +13,15 @@ sceneManager.setCanvas(canvas);
 
 
 const allEntities = new EntityCollection();
+
+
+const allImages = new ImageCollection();
+let imagesToLoad : Array<String> = [
+    "test-hexagon.png"
+];
+for (let image of imagesToLoad) {
+    allImages.load(image);
+};
 
 
 // main loop that ticks the program
