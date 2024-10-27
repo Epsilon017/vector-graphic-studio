@@ -4,7 +4,7 @@ export class ImageCollection {
     private images : Map<String, HTMLCanvasElement> = new Map();
 
 
-    load(path : string) : Promise<void> {
+    load(path : String) : Promise<void> {
 
         return new Promise((resolve, reject) => {
 
@@ -46,5 +46,5 @@ export class ImageCollection {
 
     };
 
-    
+
 };
