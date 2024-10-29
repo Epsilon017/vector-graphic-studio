@@ -46,7 +46,7 @@ export class SceneManager { // singleton for controlling operations the user can
 
     tick() {
 
-        if (this.currentScene !== null) {
+        if (this.currentScene !== null && this.currentScene.isReady()) {
             this.currentScene.update();
             this.canvasContext.clearRect(0, 0, this.canvas.width, this.canvas.height);
             this.currentScene.draw();

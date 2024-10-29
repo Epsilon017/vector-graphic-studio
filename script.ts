@@ -14,13 +14,10 @@ sceneManager.setCanvas(canvas);
 
 
 const firstScene = new Scene();
-let imagesToLoad : Array<String> = [
+firstScene.preloadImages([
     "test-hexagon.png"
-];
-for (let image of imagesToLoad) {
-    firstScene.imageCollection.load(image);
-};
-sceneManager.currentScene = firstScene
+]);
+sceneManager.currentScene = firstScene;
 
 
 // main loop that ticks the program
