@@ -10,11 +10,25 @@ export class Scene {
     private ready : boolean = false;
 
 
+    constructor() {
+
+        console.log(`Started loading scene ${this.constructor.name}`);
+        this.setup();
+
+    };
+
+
+    protected async setup() {
+
+        throw new Error("Setup function must be implemented by scene subclasses");
+
+    };
+
+
     async preloadImages(imagePaths : string[]) {
 
         let loadPromises = imagePaths.map((path) => this.imageCollection.load(path));
         await Promise.all(loadPromises);
-        this.flagAsReady();
 
     };
 
