@@ -2,7 +2,7 @@ import { EntityCollection } from "./entity-collection.js";
 import { ImageCollection } from "./image-collection.js";
 import { SceneManager } from "./scene-manager.js";
 
-export class Scene {
+export abstract class Scene {
 
 
     entityCollection : EntityCollection = new EntityCollection();
@@ -18,11 +18,7 @@ export class Scene {
     };
 
 
-    protected async setup() {
-
-        throw new Error("Setup function must be implemented by scene subclasses");
-
-    };
+    protected abstract setup() : Promise<void>; // for loading resources and creating Entity instances used in the scene
 
 
     async preloadImages(imagePaths : string[]) {

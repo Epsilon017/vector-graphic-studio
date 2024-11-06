@@ -1,6 +1,6 @@
 import { Entity } from "./entity.js";
 
-export class Component {
+export abstract class Component {
 
 
     protected owner : Entity;

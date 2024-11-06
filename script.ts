@@ -13,13 +13,6 @@ const sceneManager = SceneManager.getInstance()
 sceneManager.setCanvas(canvas);
 
 
-const firstScene = new Scene();
-firstScene.preloadImages([
-    "test-hexagon.png"
-]);
-sceneManager.currentScene = firstScene;
-
-
 // main loop that ticks the program
 function mainLoop(timestamp : DOMHighResTimeStamp) {
 

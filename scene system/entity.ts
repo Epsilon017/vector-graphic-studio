@@ -1,6 +1,6 @@
 import { Component } from "./component.js";
 
-export class Entity {
+export abstract class Entity {
 
 
     private components : Array<Component> = [];
