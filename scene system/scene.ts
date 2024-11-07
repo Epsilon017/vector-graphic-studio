@@ -18,7 +18,7 @@ export abstract class Scene {
     };
 
 
-    private async setup() {
+    protected async setup() {
 
         console.log(`Started loading scene: ${this.constructor.name}`);
         await this.preloadImages(this.requiredImages);
