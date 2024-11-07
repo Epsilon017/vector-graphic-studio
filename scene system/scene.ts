@@ -8,17 +8,25 @@ export abstract class Scene {
     entityCollection : EntityCollection = new EntityCollection();
     imageCollection : ImageCollection = new ImageCollection();
     private ready : boolean = false;
+    protected abstract requiredImages : Array<string>;
 
 
     constructor() {
 
-        console.log(`Started loading scene ${this.constructor.name}`);
         this.setup();
 
     };
 
 
-    protected abstract setup() : Promise<void>; // for loading resources and creating Entity instances used in the scene
+    private async setup() {
+
+        console.log(`Started loading scene: ${this.constructor.name}`);
+        await this.preloadImages(this.requiredImages);
+        this.populateWithEntities();
+        this.ready = true;
+        console.log(`Finished loading scene: ${this.constructor.name}`);
+
+    };
 
 
     async preloadImages(imagePaths : string[]) {
@@ -29,17 +37,12 @@ export abstract class Scene {
     };
 
 
+    protected abstract populateWithEntities();
+
+
     isReady() {
 
         return this.ready;
-
-    };
-
-
-    flagAsReady() {
-
-        console.log(`Finished loading scene ${this.constructor.name}`);
-        this.ready = true;
 
     };
 
@@ -60,4 +63,6 @@ export abstract class Scene {
         this.entityCollection.drawAll();
 
     };
+
+    
 };
