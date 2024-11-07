@@ -20,9 +20,10 @@ export class C_Sprite extends Component {
     };
 
 
-    setImage(newImage : HTMLCanvasElement) {
+    setImage(imagePath : string) {
 
-        this.image = newImage;
+        let currentScene = SceneManager.getInstance().currentScene;
+        this.image = currentScene.imageCollection.get(imagePath);
 
     };
 
