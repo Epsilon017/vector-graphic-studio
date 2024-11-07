@@ -1,10 +1,10 @@
 export class ImageCollection {
 
 
-    private images : Map<String, HTMLCanvasElement> = new Map();
+    private images : Map<string, HTMLCanvasElement> = new Map();
 
 
-    load(path : String) : Promise<void> {
+    load(path : string) : Promise<void> {
 
         return new Promise((resolve, reject) => {
 
@@ -36,7 +36,7 @@ export class ImageCollection {
     };
 
 
-    get(path : String) : HTMLCanvasElement {
+    get(path : string) : HTMLCanvasElement {
 
         if (this.images.has(path)) {
             return this.images.get(path);
