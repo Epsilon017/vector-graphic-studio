@@ -13,7 +13,8 @@ export abstract class Scene {
 
     constructor() {
 
-        this.setup();
+        // defer setup until the subclass has fully initialized
+        queueMicrotask(() => this.setup());
 
     };
 
