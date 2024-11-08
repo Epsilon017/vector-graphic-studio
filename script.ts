@@ -2,6 +2,7 @@ import { EntityCollection } from "./scene system/entity-collection.js"
 import { ImageCollection } from "./scene system/image-collection.js";
 import { SceneManager } from "./scene system/scene-manager.js";
 import { Scene } from "./scene system/scene.js";
+import { FirstScene } from "./scenes/first-scene.js";
 
 // setup main display canvas that covers the whole body
 const canvas = document.getElementById('onscreenCanvas') as HTMLCanvasElement;
@@ -11,6 +12,7 @@ canvas.height = window.innerHeight;
 
 const sceneManager = SceneManager.getInstance()
 sceneManager.setCanvas(canvas);
+sceneManager.currentScene = new FirstScene();
 
 
 // main loop that ticks the program
