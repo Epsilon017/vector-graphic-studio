@@ -9,6 +9,7 @@ export abstract class Scene {
     imageCollection : ImageCollection = new ImageCollection();
     private ready : boolean = false;
     protected abstract requiredImages : Array<string>;
+    backgroundColor : string = '#000000';
 
 
     constructor() {
@@ -60,6 +61,9 @@ export abstract class Scene {
         let sceneManager = SceneManager.getInstance();
         let canvas = sceneManager.getCanvas();
         let ctx = sceneManager.getCanvasContext();
+
+        ctx.fillStyle = this.backgroundColor;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         this.entityCollection.drawAll();
 
