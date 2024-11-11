@@ -12,6 +12,8 @@ export class FirstScene extends Scene {
         "test-hexagon.png"
     ];
 
+    backgroundColor = "#212121";
+
 
     protected populateWithEntities() {
         
