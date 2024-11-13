@@ -12,6 +12,12 @@ export abstract class Component {
 
     };
 
+    getOwner() {
+
+        return this.owner;
+
+    };
+
 
     update() {};
 
