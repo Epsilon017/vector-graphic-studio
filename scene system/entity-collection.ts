@@ -23,6 +23,13 @@ export class EntityCollection {
     };
 
 
+    getEntities() {
+
+        return this.entities.slice();
+
+    };
+
+
     updateAll() {
 
         for (let entity of this.entities) {
