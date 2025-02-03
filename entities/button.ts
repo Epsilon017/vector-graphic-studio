@@ -1,4 +1,5 @@
 import { C_BoxCollider } from "../components/box-collider.js";
+import { C_Mouse } from "../components/mouse.js";
 import { C_Transform } from "../components/transform.js";
 import { Entity } from "../scene system/entity.js";
 import { SceneManager } from "../scene system/scene-manager.js";
@@ -15,6 +16,7 @@ export class E_Button extends Entity {
         super();
         this.addComponent(C_Transform);
         this.addComponent(C_BoxCollider);
+        this.addComponent(C_Mouse);
 
     };
 

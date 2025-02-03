@@ -1,3 +1,4 @@
+import { MouseInputManager } from "./mouse-input-manager.js";
 import { SceneManager } from "./scene system/scene-manager.js";
 import { FirstScene } from "./scenes/first-scene.js";
 
@@ -10,6 +11,9 @@ canvas.height = window.innerHeight;
 const sceneManager = SceneManager.getInstance()
 sceneManager.setCanvas(canvas);
 sceneManager.currentScene = new FirstScene();
+
+
+const mouseInputManager = MouseInputManager.getInstance()
 
 
 // main loop that ticks the program
