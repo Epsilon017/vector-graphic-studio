@@ -7,6 +7,8 @@ export class C_Sprite extends Component {
 
 
     private image : HTMLCanvasElement;
+    width : number;
+    height : number;
     
 
     constructor(owner : Entity) {
@@ -24,6 +26,8 @@ export class C_Sprite extends Component {
 
         let currentScene = SceneManager.getInstance().currentScene;
         this.image = currentScene.imageCollection.get(imagePath);
+        this.width = this.image.width;
+        this.height = this.image.height;
 
     };
 
@@ -35,7 +39,7 @@ export class C_Sprite extends Component {
         };
 
         let position = this.owner.getComponent(C_Transform).getPosition();
-        SceneManager.getInstance().getCanvasContext().drawImage(this.image, position.x, position.y);
+        SceneManager.getInstance().getCanvasContext().drawImage(this.image, position.x, position.y, this.width, this.height);
         
     };
 
