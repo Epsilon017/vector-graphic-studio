@@ -23,13 +23,18 @@ export class FirstScene extends Scene {
         this.entityCollection.add(testHexagon);
 
         let testButton = new E_Button();
-        testButton.getComponent(C_Transform).setPosition(new Vector2(100, 400));
-        testButton.setDimensions(100, 100);
+        let transComp = testButton.getComponent(C_Transform);
+        transComp.setPosition(new Vector2(100, 400));
         testButton.getComponent(C_Mouse).leftClick = () => {
-            let position = testButton.getComponent(C_Transform).getPosition();
+            let position = transComp.getPosition();
             position.add(new Vector2(20, 0))
-            testButton.getComponent(C_Transform).setPosition(position);
+            transComp.setPosition(position);
         }
+        let spriteComp = testButton.addComponent(C_Sprite);
+        spriteComp.setImage("test-hexagon.png");
+        testButton.setDimensions(100, 100);
+        testButton.fillColor = "#FFCCCC";
+        testButton.borderColor = "#FF0000";
         this.entityCollection.add(testButton);
 
     };
